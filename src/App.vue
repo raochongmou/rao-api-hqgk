@@ -7,11 +7,78 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import axios from 'axios'
 
 export default {
   name: 'App',
+  data(){
+    return{
+      deptId:'deptId',
+      // departmentDto:'departmentDto',
+      deptName:'rao'
+    }
+  },
   components: {
     HelloWorld
+  },
+  created(){
+    // axios.get(`/department/list`)
+    // .then(res => {
+    //   console.log(res);
+    // })
+    // axios.get(`/department/departmentInfo`,{
+    //   params:{
+    //     deptId:'123'
+    //   }
+    // })
+    // .then(res => {
+    //   console.log(res);
+    // })
+
+    // axios.get(`/department/updateDepartmentName`,{
+    //   params:{
+    //     deptId:'123',
+    //     deptName:''
+    //   }
+    // })
+    // .then(res => {
+    //   console.log(res);
+    // })
+
+    // axios.get(`/department/updateStatus`,{
+    //   params:{
+    //     deptId:'updateStatus',
+    //     status:'updateStatus'
+    //   }
+    // })
+    // .then(res => {
+    //   console.log(res);
+    // })
+
+    // axios.post('/department/delete',this.deptId)
+    // .then(res => {
+    //   console.log(res);
+    // })
+
+
+
+
+
+
+    axios.post('/department/add',{
+      params:{
+        "name":"rao",
+        "age":"18",
+        "hobby":"basketball"
+      }
+    })
+    .then(res => {
+      console.log(res);
+    })
+    axios.post('/department/update',this.departmentDto)
+    .then(res => {
+      console.log(res);
+    })
   }
 }
 </script>
